@@ -1,13 +1,13 @@
-## Brakeman github action
+## Brakeman Github action
 
-Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
+Brakeman is a static analysis tool that checks Ruby on Rails applications for security vulnerabilities.
 [See more](https://github.com/presidentbeef/brakeman)
 
 ### Usage
 
 ```yml
 - name: Brakeman
-  uses: devmasx/brakeman-linter-action@v1.0.0
+  uses: suhasg/brakeman-linter-action@v1.0.0
   env:
     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 ```
@@ -22,7 +22,7 @@ Brakeman is a static analysis tool which checks Ruby on Rails applications for s
   run: |
     brakeman -f json > tmp/brakeman.json || exit 0
 - name: Brakeman
-  uses: devmasx/brakeman-linter-action@v1.0.0
+  uses: suhasg/brakeman-linter-action@v1.0.0
   env:
     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     REPORT_PATH: tmp/brakeman.json
@@ -32,7 +32,7 @@ Brakeman is a static analysis tool which checks Ruby on Rails applications for s
 
 ```yml
 - name: Brakeman
-  uses: devmasx/brakeman-linter-action@v1.0.0
+  uses: suhasg/brakeman-linter-action@v1.0.0
   env:
     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     PROJECT_PATH: my_rails_app
@@ -47,11 +47,11 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Brakeman
-      uses: devmasx/brakeman-linter-action@v1.0.0
+      uses: suhasg/brakeman-linter-action@v1.0.0
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 ```
